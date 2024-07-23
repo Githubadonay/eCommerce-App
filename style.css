@@ -72,5 +72,9 @@ nav {
     height: 280px;
     overflow: hidden;
 }
+.header__grid__img{
+    width: 100%;
+
+}
 
  
