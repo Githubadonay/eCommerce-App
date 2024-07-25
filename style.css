@@ -36,7 +36,7 @@ button {
 
 /* Navigation */
 
-nav {
+.nav {
   box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.2);
   height: 88px;
 }
@@ -69,6 +69,56 @@ nav {
   text-decoration: underline;
 }
 
+.nav__menu {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  display: none;
+}
+
+/* Manu */
+
+.menu {
+  position: fixed;
+  background-color: #f8f8f8;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 200ms ease;
+}
+
+.open .menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__close {
+  position: absolute;
+  top: 44px;
+  right: 32px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu__link {
+  font-size: 24px;
+}
 /* Header */
 
 .header__row {
@@ -206,47 +256,47 @@ nav {
   transition: 200ms ease;
 }
 
-.banner__text__btn:hover{
+.banner__text__btn:hover {
   border-color: #000;
   background-color: transparent;
   color: #000;
 }
 
-.banner__img{
+.banner__img {
   height: 100%;
   object-fit: cover;
 }
 
 /* Banner 2 */
 
-.banner-2{
+.banner-2 {
   flex-direction: row-reverse;
 }
 
 /* Newsletter */
 
-#newsletter{
+#newsletter {
   background-color: #191919;
   color: white;
 }
 
-.newsletter__row{
+.newsletter__row {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.newsletter__title{
+.newsletter__title {
   font-size: 36px;
 }
 
-.newsletter__form{
- display: flex;
- gap: 8px;
+.newsletter__form {
+  display: flex;
+  gap: 8px;
 }
 
-.newsletter__form__input{
+.newsletter__form__input {
   width: 240px;
   height: 100%;
   padding: 8px;
@@ -255,7 +305,7 @@ nav {
   font-size: 18px;
 }
 
-.newsletter__form__submit{
+.newsletter__form__submit {
   height: 100%;
   font-size: 18px;
   padding: 8px;
@@ -265,12 +315,12 @@ nav {
 
 /*  Footer */
 
-footer{
+footer {
   background-color: #000;
   color: #fff;
 }
 
-.footer__container{
+.footer__container {
   padding: 40px 12px;
   display: flex;
   flex-direction: column;
@@ -278,15 +328,100 @@ footer{
   gap: 32px;
 }
 
-.footer__links{
+.footer__links {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   justify-content: center;
-
 }
 
-.footer__link{
+.footer__link {
   color: white;
   font-size: 18px;
+}
+
+/* LG Screan Laptops */
+@media (max-width: 1024px) {
+  /* Products  1:18:00*/
+  .product__details__title {
+    font-size: 16px;
+  }
+
+  /* Banner */
+  .banner__text {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* product */
+  .product {
+    width: calc(33.33333% - (32px / 3));
+  }
+
+  /*  banner */
+
+  .banner__text {
+    width: 100%;
+  }
+  .banner__img {
+    display: none;
+  }
+}
+
+/* SM Screens */
+
+@media (max-width: 640px) {
+  /* Naviagtion */
+  .nav__menu {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  /* header */
+  .header__title {
+    text-align: center;
+  }
+
+  .header__grid__title {
+    font-size: 24px;
+    left: 12px;
+  }
+
+  /* Products */
+
+  .product {
+    width: 48%;
+  }
+}
+
+/* Mobile devices */
+
+@media (max-width: 480px) {
+
+  /* header */
+
+  .header__grid__title{
+    left: 4px;
+    bottom: 4px;
+  }
+
+  /* products */
+
+  .product{
+    width: 100%;
+  }
+
+  /* newsletter */
+  
+  .newsletter__form{
+    flex-direction: column;
+  }
+  .newsletter__form__input{
+    text-align: center;
+  }
+
 }

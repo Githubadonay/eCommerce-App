@@ -9,9 +9,10 @@
       src="https://kit.fontawesome.com/0249917b5b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="app.js"></script>
   </head>
   <body>
-    <nav>
+    <nav class="nav">
       <div class="nav__container">
         <img src="assets/logo.png" alt="" class="nav__logo" />
         <div class="nav__links">
@@ -20,6 +21,20 @@
             <i class="fa-solid fa-cart-shopping nav__link__icon"></i>
           </a>
         </div>
+        <button class="nav__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="menu">
+      <button class="menu__close" onclick="closeMenu()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+      <div class="menu__links">
+        <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+        <a href="#" class="menu__link" onclick="closeMenu()">Products</a>
+        <a href="#" class="menu__link" onclick="closeMenu()">Cart</a>
       </div>
     </nav>
 
