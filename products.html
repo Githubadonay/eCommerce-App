@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <script src="products.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/fc0b80239e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="" class="nav__logo" />
+        </a>
+        <div class="nav__links">
+          <a href="products.html" class="nav__link"> Products </a>
+          <a href="" class="nav__link">
+            <i class="fa-solid fa-cart-shopping nav__link__icon"></i>
+          </a>
+        </div>
+        <button class="nav__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="menu">
+      <button class="menu__close" onclick="closeMenu()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+      <div class="menu__links">
+        <a href="#" class="menu__link" onclick="closeMenu()"> Home </a>
+        <a href="#" class="menu__link" onclick="closeMenu()"> Products </a>
+        <a href="#" class="menu__link" onclick="closeMenu()"> Cart </a>
+      </div>
+    </nav>
+
+    <main>
+      <section id="all-products">
+        <div class="container">
+          <div class="row all-products__row">
+            <div class="products__header">
+              <a href="index.html" class="products__header__link">
+                <i class="fa-solid fa-angle-left"></i>
+                <span class="products__header__link__text"> Home </span>
+              </a>
+              <h1 class="products__header__title">Products</h1>
+              <select class="products__header__filter" onchange="renderProducts()">
+                <option
+                  value=""
+                  class="products__header__filter__option"
+                  selected
+                  disabled
+                >
+                  All
+                </option>
+                <option
+                  value="Furniture"
+                  class="products__header__filter__option"
+                >
+                  Furniture
+                </option>
+                <option
+                  value="Electronics"
+                  class="products__header__filter__option"
+                >
+                  Electronics
+                </option>
+                <option value="Lamps" class="products__header__filter__option">
+                  Lamps
+                </option>
+                <option
+                  value="Kitchen"
+                  class="products__header__filter__option"
+                >
+                  Kitchen
+                </option>
+                <option value="Chairs" class="products__header__filter__option">
+                  Chairs
+                </option>
+                <option
+                  value="Skin Care"
+                  class="products__header__filter__option"
+                >
+                  Skin Care
+                </option>
+              </select>
+            </div>
+            <div class="products__list" id = "all-products-list">
+              <i class="fa-solid fa-spinner products__list__spinner"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="newsletter">
+        <div class="container">
+          <div class="row newsletter__row">
+            <h2 class="newsletter__title">Newsletter</h2>
+            <form action="#" class="newsletter__form">
+              <input
+                type="email"
+                placeholder="Enter Email Address"
+                class="newsletter__form__input"
+              />
+              <button class="newsletter__form__submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="#" class="footer__link">About</a>
+          <a href="#" class="footer__link">Store locator</a>
+          <a href="#" class="footer__link">FAQs</a>
+          <a href="#" class="footer__link">News</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Contact us</a>
+        </div>
+        <span class="footer__credit"> Design by Abderraouf Rahmani </span>
+      </div>
+    </footer>
+  </body>
+</html>
