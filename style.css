@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   padding: 0;
@@ -34,10 +34,50 @@ button {
   color: #d81414;
 }
 
+/* Products - Global Styles */
+
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.product {
+  width: calc(25% - 12px);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+.product:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.product__img {
+  width: 100%;
+}
+
+.product__details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product__details__title {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.product__details__price {
+  font-size: 22px;
+  font-weight: 600;
+}
+
 /* Navigation */
 
 .nav {
-  box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.2);
   height: 88px;
 }
 
@@ -76,7 +116,7 @@ button {
   display: none;
 }
 
-/* Manu */
+/* Menu */
 
 .menu {
   position: fixed;
@@ -86,7 +126,6 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -119,6 +158,7 @@ button {
 .menu__link {
   font-size: 24px;
 }
+
 /* Header */
 
 .header__row {
@@ -163,7 +203,7 @@ button {
   filter: brightness(55%);
 }
 
-/* Products */
+/* Products - Section */
 
 .products__row {
   display: flex;
@@ -176,50 +216,11 @@ button {
   font-weight: 600;
 }
 
-.products__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.product {
-  width: calc(25% - 12px);
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: 200ms ease;
-}
-
-.product:hover {
-  border-color: rgba(0, 0, 0, 0.6);
-}
-
-.product__img {
-  width: 100%;
-  filter: brightness(89%);
-}
-
-.product__details {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.product__details__title {
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.product__details__price {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-/* Banner 1 */
+/* Banner */
 
 .banner {
   display: flex;
-  background-color: #e0e0e0;
+  background-color: #e9e9e9;
   height: 400px;
 }
 
@@ -313,11 +314,11 @@ button {
   border: none;
 }
 
-/*  Footer */
+/* Footer */
 
 footer {
   background-color: #000;
-  color: #fff;
+  color: white;
 }
 
 .footer__container {
@@ -340,30 +341,101 @@ footer {
   font-size: 18px;
 }
 
-/* LG Screan Laptops */
+/* 
+
+PRODUCTS PAGE
+
+*/
+
+#all-products{
+  min-height: 50vh;
+}
+
+.all-products__row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.products__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products__header__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.products__header__link__text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.products__header__title {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.products__header__filter {
+  padding: 4px;
+  background-color: #f4f4f4;
+  font-size: 15px;
+  font-weight: 500;
+  color: #292929;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.products__list__spinner{
+  font-size: 40px;
+  margin: 0 auto;
+  animation: loading-spinner 1000ms infinite;
+}
+
+@keyframes loading-spinner{
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+/* LG Screens - Laptops*/
+
 @media (max-width: 1024px) {
-  /* Products  1:18:00*/
+  /* Products */
+
   .product__details__title {
     font-size: 16px;
   }
 
   /* Banner */
+
   .banner__text {
     padding: 0 80px;
   }
 }
 
+/* MD Screens - Tablets */
+
 @media (max-width: 768px) {
-  /* product */
+  /* Products */
+
   .product {
-    width: calc(33.33333% - (32px / 3));
+    width: 31%;
   }
 
-  /*  banner */
+  /* Banner */
 
   .banner__text {
     width: 100%;
   }
+
   .banner__img {
     display: none;
   }
@@ -372,7 +444,8 @@ footer {
 /* SM Screens */
 
 @media (max-width: 640px) {
-  /* Naviagtion */
+  /* Navigation */
+
   .nav__menu {
     display: block;
   }
@@ -381,7 +454,8 @@ footer {
     display: none;
   }
 
-  /* header */
+  /* Header */
+
   .header__title {
     text-align: center;
   }
@@ -396,32 +470,48 @@ footer {
   .product {
     width: 48%;
   }
+
+  /* Banner */
+
+  .banner__text {
+    padding: 0 40px;
+  }
 }
 
-/* Mobile devices */
+/* Mobile Devices */
 
 @media (max-width: 480px) {
+  /* Header */
 
-  /* header */
-
-  .header__grid__title{
+  .header__grid__title {
     left: 4px;
     bottom: 4px;
   }
 
-  /* products */
+  /* Products */
 
-  .product{
+  .product {
     width: 100%;
   }
 
-  /* newsletter */
-  
-  .newsletter__form{
+  /* Newsletter */
+
+  .newsletter__form {
     flex-direction: column;
   }
-  .newsletter__form__input{
+
+  .newsletter__form__input {
     text-align: center;
   }
 
+  /* 
+  
+  PRODUCTS PAGE
+  
+  */
+
+  .products__header {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
